@@ -7,21 +7,25 @@ export default function AddUser() {
 
   const [userId, setUserId] = useState("");
   const [userName, setUserName] = useState("");
-  const [age, setAge] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [description, setDescription] = useState("");
+  const [rentalPrice, setRentalPrice] = useState("");
+  const [availability, setAvailability] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     let user = {
       userId: userId,
       userName: userName,
-      age: age,
-      phoneNumber: phoneNumber,
+      description: description,
+      rentalPrice: rentalPrice,
+      availability: availability,
     };
     addUser(user);
     setUserId("");
     setUserName("");
-    setAge("");
+    setDescription("");
+    setRentalPrice("");
+    setAvailability("");
     alert("User added");
   };
 
@@ -40,13 +44,17 @@ export default function AddUser() {
         <div>
           <input type='text' id='userName' onChange={(e) => setUserName(e.target.value)} />
         </div>
-        <label htmlFor='age'>Age</label>
+        <label htmlFor='description'>Description</label>
         <div>
-          <input onChange={(e) => setAge(e.target.value)} type='text' id='age' />
+          <input onChange={(e) => setDescription(e.target.value)} type='text' id='description' />
         </div>
-        <label htmlFor='phoneNumber'>Phone Number</label>
+        <label htmlFor='rentalPrice'>Rental Price</label>
         <div>
-          <input onChange={(e) => setPhoneNumber(e.target.value)} type='text' id='phoneNumber' />
+          <input onChange={(e) => setRentalPrice(e.target.value)} type='text' id='rentalPrice' />
+        </div>
+        <label htmlFor='availability'>Availability</label>
+        <div>
+          <input onChange={(e) => setAvailability(e.target.value)} type='text' id='availability' />
         </div>
         <div>
           <button type='submit'>Add</button>

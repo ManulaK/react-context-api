@@ -21,15 +21,16 @@ export default function User() {
 
   return (
     <div>
-      <Link to='/addUser'>Add User</Link>
+      <Link to='/addUser'>Add Customer</Link>
 
       <table className='user-table'>
         <thead>
           <tr>
             <th>Id</th>
             <th>UserName</th>
-            <th>Age</th>
-            <th>Phone Number</th>
+            <th>Description</th>
+            <th>Rental Price</th>
+            <th>Availability</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -38,8 +39,9 @@ export default function User() {
             <tr key={userData.userId}>
               <td>{userData.userId}</td>
               <td>{userData.userName}</td>
-              <td>{userData.age}</td>
-              <td>{userData.phoneNumber}</td>
+              <td>{userData.description}</td>
+              <td>{userData.rentalPrice}</td>
+              <td>{userData.availability}</td>
               <td>
                 <div className='user-button'>
                   <button className='user-button-edit' onClick={() => handleEdit(userData.userId)}>

@@ -9,7 +9,7 @@ export default function Home() {
           <button>Go to User Page</button>
         </Link>
         <Link to='/book'>
-          <button>Go to Book Page</button>
+          <button>Go to Equipment Page</button>
         </Link>
       </div>
     </>

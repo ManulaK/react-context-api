@@ -1,67 +1,77 @@
 import { UserContext } from "../context/UserContext";
 import { useState } from "react";
-
+//description, rental price, and availability
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState([
     {
       userId: 1,
       userName: "John Doe",
-      age: "56",
-      phoneNumber: "+94345F67890",
+      description: "test description",
+      rentalPrice: "100",
+      availability: "yes",
     },
     {
       userId: 2,
       userName: "Jane mite",
-      age: "32",
-      phoneNumber: "+94374567890",
+      description: "test description",
+      rentalPrice: "100",
+      availability: "yes",
     },
     {
       userId: 3,
       userName: "John Smith",
-      age: "45",
-      phoneNumber: "+94374567890",
+      description: "test description",
+      rentalPrice: "100",
+      availability: "yes",
     },
     {
       userId: 4,
       userName: "Jane Smith",
-      age: "23",
-      phoneNumber: "+94374567890",
+      description: "test description",
+      rentalPrice: "100",
+      availability: "yes",
     },
     {
       userId: 5,
       userName: "John Doe",
-      age: "56",
-      phoneNumber: "+94374567890",
+      description: "test description",
+      rentalPrice: "100",
+      availability: "yes",
     },
     {
       userId: 6,
       userName: "Jane mite",
-      age: "32",
-      phoneNumber: "+94374567890",
+      description: "test description",
+      rentalPrice: "100",
+      availability: "yes",
     },
     {
       userId: 7,
       userName: "John Smith",
-      age: "45",
-      phoneNumber: "+94374567890",
+      description: "test description",
+      rentalPrice: "100",
+      availability: "yes",
     },
     {
       userId: 8,
       userName: "Jane Smith",
-      age: "23",
-      phoneNumber: "+94374567890",
+      description: "test description",
+      rentalPrice: "100",
+      availability: "yes",
     },
     {
       userId: 9,
       userName: "John Doe",
-      age: "56",
-      phoneNumber: "+94374567890",
+      description: "test description",
+      rentalPrice: "100",
+      availability: "yes",
     },
     {
       userId: 10,
       userName: "Jane mite",
-      age: "32",
-      phoneNumber: "+94374567890",
+      description: "test description",
+      rentalPrice: "100",
+      availability: "yes",
     },
   ]);
 
