@@ -4,18 +4,18 @@ import { UserContext } from "../../context/UserContext";
 export default function EditUserForm({ userId, onClose }) {
   const { user, updateUser } = useContext(UserContext);
   const [userName, setUserName] = useState("");
-  const [address, setAddress] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [rentedEquipment, setRentedEquipment] = useState("");
+  const [description, setDescription] = useState("");
+  const [rentalPrice, setRentalPrice] = useState("");
+  const [availability, setAvailability] = useState("");
 
   useEffect(() => {
     // Fetch the user data based on the userId and populate the form fields
     const selectedUser = user.find((userData) => userData.userId === userId);
     if (selectedUser) {
       setUserName(selectedUser.userName);
-      setAddress(selectedUser.address);
-      setPhoneNumber(selectedUser.phoneNumber);
-      setRentedEquipment(selectedUser.rentedEquipment);
+      setDescription(selectedUser.description);
+      setRentalPrice(selectedUser.rentalPrice);
+      setAvailability(selectedUser.availability);
     }
   }, [userId, user]);
 
@@ -23,16 +23,16 @@ export default function EditUserForm({ userId, onClose }) {
     setUserName(event.target.value);
   };
 
-  const handleAddressChange = (event) => {
-    setAddress(event.target.value);
+  const handleDescriptionChange = (event) => {
+    setDescription(event.target.value);
   };
 
-  const handlePhoneNumberChange = (event) => {
-    setPhoneNumber(event.target.value);
+  const handleRentalPriceChange = (event) => {
+    setRentalPrice(event.target.value);
   };
 
-  const handleRentedEquipmentChange = (event) => {
-    setRentedEquipment(event.target.value);
+  const handleAvailabilityChange = (event) => {
+    setAvailability(event.target.value);
   };
 
   const handleSubmit = (event) => {
@@ -42,9 +42,9 @@ export default function EditUserForm({ userId, onClose }) {
     const updatedUser = {
       userId,
       userName,
-      address,
-      phoneNumber,
-      rentedEquipment,
+      description,
+      rentalPrice,
+      availability,
     };
     updateUser(updatedUser);
 
@@ -61,25 +61,30 @@ export default function EditUserForm({ userId, onClose }) {
           <input type='text' id='userName' value={userName} onChange={handleUserNameChange} />
         </div>
         <div>
-          <label htmlFor='address'>address:</label>
-          <input type='text' id='address' value={address} onChange={handleAddressChange} />
-        </div>
-        <div>
-          <label htmlFor='phoneNumber'>Phone Number:</label>
+          <label htmlFor='description'>Description:</label>
           <input
             type='text'
-            id='phoneNumber'
-            value={phoneNumber}
-            onChange={handlePhoneNumberChange}
+            id='description'
+            value={description}
+            onChange={handleDescriptionChange}
           />
         </div>
         <div>
-          <label htmlFor='rentedEquipment'>rentedEquipment:</label>
+          <label htmlFor='rentalPrice'>Rental Price:</label>
           <input
             type='text'
-            id='rentedEquipment'
-            value={rentedEquipment}
-            onChange={handleRentedEquipmentChange}
+            id='rentalPrice'
+            value={rentalPrice}
+            onChange={handleRentalPriceChange}
+          />
+        </div>
+        <div>
+          <label htmlFor='availability'>Availability:</label>
+          <input
+            type='text'
+            id='availability'
+            value={availability}
+            onChange={handleAvailabilityChange}
           />
         </div>
         <div>

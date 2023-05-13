@@ -7,25 +7,25 @@ export default function AddUser() {
 
   const [userId, setUserId] = useState("");
   const [userName, setUserName] = useState("");
-  const [address, setAddress] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [rentedEquipment, setRentedEquipment] = useState("");
+  const [description, setDescription] = useState("");
+  const [rentalPrice, setRentalPrice] = useState("");
+  const [availability, setAvailability] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     let user = {
       userId: userId,
       userName: userName,
-      address: address,
-      phoneNumber: phoneNumber,
-      rentedEquipment: rentedEquipment,
+      description: description,
+      rentalPrice: rentalPrice,
+      availability: availability,
     };
     addUser(user);
     setUserId("");
     setUserName("");
-    setAddress("");
-    setPhoneNumber("");
-    setRentedEquipment("");
+    setDescription("");
+    setRentalPrice("");
+    setAvailability("");
     alert("User added");
   };
 
@@ -44,21 +44,17 @@ export default function AddUser() {
         <div>
           <input type='text' id='userName' onChange={(e) => setUserName(e.target.value)} />
         </div>
-        <label htmlFor='address'>address</label>
+        <label htmlFor='description'>Description</label>
         <div>
-          <input onChange={(e) => setAddress(e.target.value)} type='text' id='address' />
+          <input onChange={(e) => setDescription(e.target.value)} type='text' id='description' />
         </div>
-        <label htmlFor='phoneNumber'>phoneNumber</label>
+        <label htmlFor='rentalPrice'>Rental Price</label>
         <div>
-          <input onChange={(e) => setPhoneNumber(e.target.value)} type='text' id='phoneNumber' />
+          <input onChange={(e) => setRentalPrice(e.target.value)} type='text' id='rentalPrice' />
         </div>
-        <label htmlFor='rentedEquipment'>rentedEquipment</label>
+        <label htmlFor='availability'>Availability</label>
         <div>
-          <input
-            onChange={(e) => setRentedEquipment(e.target.value)}
-            type='text'
-            id='rentedEquipment'
-          />
+          <input onChange={(e) => setAvailability(e.target.value)} type='text' id='availability' />
         </div>
         <div>
           <button type='submit'>Add</button>

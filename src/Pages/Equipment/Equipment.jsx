@@ -1,47 +1,47 @@
 import { useContext, useState } from "react";
-import { UserContext } from "../../context/UserContext";
+import { EquipmentContext } from "../../context/EquipmentContext";
 import { Link } from "react-router-dom";
-import EditUserForm from "./EditUser";
+import EditUserForm from "./EditEquipment";
 
-export default function User() {
-  const { user, deleteUser } = useContext(UserContext);
-  const [editUserId, setEditUserId] = useState(null);
+export default function Equipment() {
+  const { equipment, deleteEquipment } = useContext(EquipmentContext);
+  const [editEquipmentId, setEditEquipmentId] = useState(null);
 
   const handleEdit = (userId) => {
-    setEditUserId(userId);
+    setEditEquipmentId(userId);
   };
 
   const handleEditClose = () => {
-    setEditUserId(null);
+    setEditEquipmentId(null);
   };
 
   const handleDelete = (userId) => {
-    deleteUser(userId);
+    deleteEquipment(userId);
   };
 
   return (
     <div>
-      <Link to='/addUser'>Add Customer</Link>
+      <Link to='/addUser'>Add Equipment</Link>
 
       <table className='user-table'>
         <thead>
           <tr>
             <th>Id</th>
             <th>UserName</th>
-            <th>Address</th>
-            <th>Phone Number</th>
-            <th>Rented Equipment</th>
+            <th>Description</th>
+            <th>Rental Price</th>
+            <th>Availability</th>
             <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          {user.map((userData) => (
+          {equipment.map((userData) => (
             <tr key={userData.userId}>
               <td>{userData.userId}</td>
               <td>{userData.userName}</td>
-              <td>{userData.address}</td>
-              <td>{userData.phoneNumber}</td>
-              <td>{userData.rentedEquipment}</td>
+              <td>{userData.description}</td>
+              <td>{userData.rentalPrice}</td>
+              <td>{userData.availability}</td>
               <td>
                 <div className='user-button'>
                   <button className='user-button-edit' onClick={() => handleEdit(userData.userId)}>
@@ -59,7 +59,7 @@ export default function User() {
         </tbody>
       </table>
 
-      {editUserId && <EditUserForm userId={editUserId} onClose={handleEditClose} />}
+      {editEquipmentId && <EditUserForm userId={editEquipmentId} onClose={handleEditClose} />}
       <Link to='/'>Back</Link>
     </div>
   );

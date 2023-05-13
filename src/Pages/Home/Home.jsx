@@ -8,7 +8,7 @@ export default function Home() {
         <Link to='/user'>
           <button>Go to User Page</button>
         </Link>
-        <Link to='/book'>
+        <Link to='/equipment'>
           <button>Go to Equipment Page</button>
         </Link>
       </div>
