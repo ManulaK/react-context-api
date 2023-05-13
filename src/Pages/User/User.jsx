@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { UserContext } from "../../context/UserContext";
 import { Link } from "react-router-dom";
 import EditUserForm from "./EditUser";
+import "./User.css";
 
 export default function User() {
   const { user, deleteUser } = useContext(UserContext);
@@ -21,6 +22,7 @@ export default function User() {
 
   return (
     <div>
+      <h2 className='header'>Power Equipment Renting System - Customer</h2>
       <Link to='/addUser'>Add Customer</Link>
 
       <table className='user-table'>

@@ -34,7 +34,7 @@ export default function AddUser() {
       <div>
         <Link to='/equipment'>Back</Link>
       </div>
-      <h1>Add User</h1>
+      <h2 className='header'>Power Equipment Renting System - Add Equipment</h2>
       <form className='add-user-class' onSubmit={handleSubmit}>
         <label htmlFor='userId'>Id</label>
         <div>

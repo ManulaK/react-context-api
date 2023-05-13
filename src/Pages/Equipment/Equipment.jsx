@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { EquipmentContext } from "../../context/EquipmentContext";
 import { Link } from "react-router-dom";
 import EditUserForm from "./EditEquipment";
+import "./Equipment.css";
 
 export default function Equipment() {
   const { equipment, deleteEquipment } = useContext(EquipmentContext);
@@ -21,6 +22,7 @@ export default function Equipment() {
 
   return (
     <div>
+      <h2 className='header'>Power Equipment Renting System - Equipment</h2>
       <Link to='/addEquipment'>Add Equipment</Link>
 
       <table className='user-table'>
@@ -64,5 +66,3 @@ export default function Equipment() {
     </div>
   );
 }
-
-

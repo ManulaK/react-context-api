@@ -1,0 +1,27 @@
+.user-page {
+  font-size: 20px;
+  height: 10vh;
+}
+
+.equipment-page {
+  font-size: 20px;
+  height: 10vh;
+  margin-left: 30px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  background-color: #282c34;
+  color: white;
+  padding: 0 20px;
+}
+
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

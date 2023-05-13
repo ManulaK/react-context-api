@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { UserContext } from "../../context/UserContext";
 import { Link } from "react-router-dom";
+import "./User.css";
 
 export default function AddUser() {
   let { addUser } = useContext(UserContext);
@@ -34,7 +35,7 @@ export default function AddUser() {
       <div>
         <Link to='/'>Back</Link>
       </div>
-      <h1>Add User</h1>
+      <h2 className='header'>Power Equipment Renting System -Add Customer</h2>
       <form className='add-user-class' onSubmit={handleSubmit}>
         <label htmlFor='userId'>Id</label>
         <div>

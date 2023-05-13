@@ -1,15 +1,16 @@
 import { Link } from "react-router-dom";
+import "./Home.css";
 
 export default function Home() {
   return (
     <>
-      <div>
-        <h1>Home Page</h1>
+      <h2 className='header'>Power Equipment Renting System</h2>
+      <div className='home-container'>
         <Link to='/user'>
-          <button>Go to User Page</button>
+          <button className='user-page'>Go to Customer Page</button>
         </Link>
         <Link to='/equipment'>
-          <button>Go to Equipment Page</button>
+          <button className='equipment-page'>Go to Equipment Page</button>
         </Link>
       </div>
     </>
