@@ -21,7 +21,7 @@ export default function Equipment() {
 
   return (
     <div>
-      <Link to='/addUser'>Add Equipment</Link>
+      <Link to='/addEquipment'>Add Equipment</Link>
 
       <table className='user-table'>
         <thead>

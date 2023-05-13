@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
-import { UserContext } from "../../context/UserContext";
+import { EquipmentContext } from "../../context/EquipmentContext";
 import { Link } from "react-router-dom";
 
 export default function AddUser() {
-  let { addUser } = useContext(UserContext);
+  let { addEquipment } = useContext(EquipmentContext);
 
   const [userId, setUserId] = useState("");
   const [userName, setUserName] = useState("");
@@ -13,26 +13,26 @@ export default function AddUser() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let user = {
+    let equipment = {
       userId: userId,
       userName: userName,
       description: description,
       rentalPrice: rentalPrice,
       availability: availability,
     };
-    addUser(user);
+    addEquipment(equipment);
     setUserId("");
     setUserName("");
     setDescription("");
     setRentalPrice("");
     setAvailability("");
-    alert("User added");
+    alert("equipment added");
   };
 
   return (
     <div>
       <div>
-        <Link to='/'>Back</Link>
+        <Link to='/equipment'>Back</Link>
       </div>
       <h1>Add User</h1>
       <form className='add-user-class' onSubmit={handleSubmit}>
@@ -57,7 +57,7 @@ export default function AddUser() {
           <input onChange={(e) => setAvailability(e.target.value)} type='text' id='availability' />
         </div>
         <div>
-          <button type='submit'>Add</button>
+          <button type='submit'>Add equipment</button>
         </div>
       </form>
     </div>

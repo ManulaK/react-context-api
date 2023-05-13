@@ -1,8 +1,8 @@
 import { useContext, useState, useEffect } from "react";
-import { UserContext } from "../../context/UserContext";
+import { EquipmentContext } from './../../context/EquipmentContext';
 
 export default function EditUserForm({ userId, onClose }) {
-  const { user, updateUser } = useContext(UserContext);
+  const { equipment, updateEquipment } = useContext(EquipmentContext);
   const [userName, setUserName] = useState("");
   const [description, setDescription] = useState("");
   const [rentalPrice, setRentalPrice] = useState("");
@@ -10,14 +10,14 @@ export default function EditUserForm({ userId, onClose }) {
 
   useEffect(() => {
     // Fetch the user data based on the userId and populate the form fields
-    const selectedUser = user.find((userData) => userData.userId === userId);
+    const selectedUser = equipment.find((userData) => userData.userId === userId);
     if (selectedUser) {
       setUserName(selectedUser.userName);
       setDescription(selectedUser.description);
       setRentalPrice(selectedUser.rentalPrice);
       setAvailability(selectedUser.availability);
     }
-  }, [userId, user]);
+  }, [userId, equipment]);
 
   const handleUserNameChange = (event) => {
     setUserName(event.target.value);
@@ -39,14 +39,14 @@ export default function EditUserForm({ userId, onClose }) {
     event.preventDefault();
 
     // Update the user data with the edited values
-    const updatedUser = {
+    const updatedEquipment = {
       userId,
       userName,
       description,
       rentalPrice,
       availability,
     };
-    updateUser(updatedUser);
+    updateEquipment(updatedEquipment);
 
     // Close the edit form
     onClose();
